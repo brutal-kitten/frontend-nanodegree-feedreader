@@ -8,5 +8,5 @@ You can clone my repository and than open file index.html in your browser.
 After the page loads, the tests will run and will be displayed at the bottom of the page.
 
 ## Dependencies
-For testing purpose I used Jasmine: https://jasmine.github.io/pages/getting_started.html
+For testing I used Jasmine: https://jasmine.github.io/pages/getting_started.html
 The are no needs to download it additionally, just download this repo.
