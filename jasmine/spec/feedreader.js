@@ -13,7 +13,7 @@ $(function() {
     * a related set of tests. This suite is all about the RSS
     * feeds definitions, the allFeeds variable in our application.
     */
-    
+
 
     describe('RSS Feeds', function() {
         /* This is our first test - it tests to make sure that the
@@ -74,8 +74,10 @@ $(function() {
           it('changes visibility when the menu icon is clicked', function() {
                const body = document.querySelector('body');
                const menuIcon = document.getElementsByClassName('menu-icon-link');
+               // After first click menu has to be displayed
                menuIcon[0].click();
                expect(body.className).not.toBe('menu-hidden');
+               // then we click again adn menu has to be hidden
                menuIcon[0].click();
                expect(body.className).toBe('menu-hidden');
           });
@@ -112,9 +114,11 @@ $(function() {
          const feed = document.querySelector('.feed');
 
          beforeEach(function(done) {
-             loadFeed(2, function() {
+            // load for the first time and save the content as a text
+             loadFeed(1, function() {
                  contentBeforeLoading = feed.innerText;
-                 loadFeed(3, function() {
+                 //load  for the second time the next feed and save the content as a text
+                 loadFeed(2, function() {
                     contentAfterLoading = feed.innerText;
                     done();
                  });
@@ -123,10 +127,8 @@ $(function() {
 
 
          it('the content actually changes', function() {
+              //check the contents from two different loadind
               expect(contentAfterLoading).not.toBe(contentBeforeLoading);
-
-
-
            });
     });
 }());
