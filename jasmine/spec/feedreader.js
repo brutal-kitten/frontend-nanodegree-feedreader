@@ -62,8 +62,8 @@ $(function() {
          * hiding/showing of the menu element.
          */
          it('element is hidden by default', function() {
-              const body = document.querySelector('body');
-              expect(body.className).toBe('menu-hidden');
+              const body = $('body');
+              expect(body.hasClass('menu-hidden')).toBe(true);
          });
 
          /* a test that ensures the menu changes
